@@ -1,20 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
+import { useReducer } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import HomeRoot from './components';
+import { initialState, reducer } from './components/reducer';
+import UseAppReducer from './hooks/use-app-reducer';
 
 export default function App() {
+  const [state, dispatch] = useReducer(reducer, initialState)
+  const {notes = []} = state
+  const updateValues = (type, val) => {
+    dispatch({type, value: val})
+  }
+  console.log(state, 'all notes');
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View>
+      <HomeRoot notes={notes} setNotes={updateValues}/>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+
 });
