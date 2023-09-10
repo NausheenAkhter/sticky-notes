@@ -8,7 +8,6 @@ const Home = ({ setScreen }) => {
     <View style={styles.mainContainer}>
       <View style={styles.itemButton}>
         <Pressable onPress={() => setScreen(screens.addNote)}>
-
           <Text>Add a note</Text>
           <Icon name='arrow-forward-outline' />
         </Pressable>
@@ -16,7 +15,6 @@ const Home = ({ setScreen }) => {
       </View>
       <View style={styles.itemButton}>
         <Pressable onPress={() => setScreen(screens.seeNotes)}>
-
           <Text>See all notes</Text>
           <Icon name='arrow-forward-outline' />
         </Pressable>
@@ -33,7 +31,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'space-evenly',
     alignItems: 'center',
-    marginTop: 50
+    marginTop: 150
   },
   itemButton: {
     width: Dimensions.get('screen').width - 100,

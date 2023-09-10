@@ -1,6 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
-import { useEffect, useReducer, useState } from 'react';
-import { Image, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { useState } from 'react';
+import { StyleSheet, View } from 'react-native';
 import Header from './header';
 import { screens } from './constants';
 import AddNote from '../screens/add-note';
@@ -24,9 +23,6 @@ const getComponent = (comp) => {
 export default function HomeRoot({ notes, setNotes }) {
   const [currentScreen, setCurrentScreen] = useState(screens.home)
   const Component = getComponent(currentScreen)
-  useEffect(() => {
-    console.log(currentScreen);
-  }, [currentScreen])
   
   return (
     <View>
